@@ -1,0 +1,22 @@
+<div class="float-container">
+    <div class="float-child">
+        <app-home-page></app-home-page>
+        <div class="form">
+            <form class="login-form" [formGroup]="createForm" (ngSubmit)="save()">
+                <input type="text" placeholder="City" formControlName="city" />
+                <input type="text" placeholder="Start Date" formControlName="start_date" />
+                <input type="text" placeholder="End Date" formControlName="end_date" />
+                <input type="text" placeholder="Price" formControlName="price" />
+                <input type="text" placeholder="Status" formControlName="status" />
+                <input type="text" placeholder="Color" formControlName="color" />
+
+                <button type="submit" [disabled]="!createForm.valid">Create</button>
+            </form>
+        </div>
+    </div>
+    <div class="float-child1">
+        <ag-grid-angular style="width: 830px; height: 600px;" class="ag-theme-alpine" [rowData]="data1 | async"
+            [columnDefs]="columnDefs">
+        </ag-grid-angular>
+    </div>
+</div>

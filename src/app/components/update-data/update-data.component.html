@@ -1,0 +1,23 @@
+<div class="float-container">
+  <div class="float-child">
+    <app-home-page></app-home-page>
+    <div class="form">
+      <form class="login-form" [formGroup]="updateForm" (ngSubmit)="update()">
+        <input type="text" placeholder="City" formControlName="city" [(ngModel)]="data.city" />
+        <input type="text" placeholder="Start Date" formControlName="start_date" [(ngModel)]="data.start_date" />
+        <input type="text" placeholder="End Date" formControlName="end_date" [(ngModel)]="data.end_date" />
+        <input type="text" placeholder="Price" formControlName="price" [(ngModel)]="data.price" />
+        <input type="text" placeholder="Status" formControlName="status" [(ngModel)]="data.status" />
+        <input type="text" placeholder="Color" formControlName="color" [(ngModel)]="data.color" />
+
+        <button type="submit" [disabled]="!updateForm.valid">Update</button>
+      </form>
+    </div>
+  </div>
+  <div class="float-child1">
+    <ag-grid-angular style="width: 830px; height: 600px;" class="ag-theme-alpine" [rowData]="data1 | async"
+      [columnDefs]="columnDefs" [rowSelection]="'single'" [rowData]="rowData"
+      (selectionChanged)="onSelectionChanged($event)" (gridReady)="onGridReady($event)">
+    </ag-grid-angular>
+  </div>
+</div>

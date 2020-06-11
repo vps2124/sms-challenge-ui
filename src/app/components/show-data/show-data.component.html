@@ -1,0 +1,15 @@
+<div class="float-container">
+
+    <div class="float-child">
+        <app-home-page></app-home-page>
+    </div>
+
+    <div class="float-child1">
+
+        <ag-grid-angular style="width: 830px; height: 600px;" class="ag-theme-alpine" [rowData]="data1 | async"
+            [columnDefs]="columnDefs">
+        </ag-grid-angular>
+
+    </div>
+
+</div>
